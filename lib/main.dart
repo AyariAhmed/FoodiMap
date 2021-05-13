@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/constants.dart';
+import 'package:foodimap_flutter/routes.dart';
 import 'package:foodimap_flutter/screens/splash/splash_screen.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }

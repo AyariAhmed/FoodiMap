@@ -4,6 +4,7 @@ import 'package:foodimap_flutter/size_config.dart';
 
 class SplashScreen extends StatelessWidget {
 
+  static const routeName = "/splash";
 
   @override
   Widget build(BuildContext context) {
