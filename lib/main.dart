@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/constants.dart';
 import 'package:foodimap_flutter/routes.dart';
 import 'package:foodimap_flutter/screens/splash/splash_screen.dart';
+import 'package:foodimap_flutter/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,17 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FoodiMap',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        textTheme: TextTheme(
-            bodyText1: TextStyle(color: kTextColor),
-            bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity
-      ),
+      theme: theme(),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }
 }
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/components/default_button.dart';
 import 'package:foodimap_flutter/constants.dart';
+import 'package:foodimap_flutter/screens/sign_in/sign_in_screen.dart';
 import 'package:foodimap_flutter/screens/splash/components/splash_content.dart';
 import 'package:foodimap_flutter/size_config.dart';
 
@@ -67,7 +68,9 @@ class _BodyState extends State<Body> {
                       Spacer(
                         flex: 3,
                       ),
-                      DefaultButton(text: "Continuer",press: (){},),
+                      DefaultButton(text: "Continuer",press: (){
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },),
                       Spacer()
                     ],
                   ),
