@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodimap_flutter/size_config.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -12,6 +13,13 @@ const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
+final headingStyle = TextStyle(
+    fontSize: getProportionateScreenWidth(24),
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+    height: 1.5
+
+);
 
 // Form Error
 final RegExp emailValidatorRegExp =
