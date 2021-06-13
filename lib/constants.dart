@@ -11,3 +11,16 @@ const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
+
+
+// Form Error
+final RegExp emailValidatorRegExp =
+RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+const String kEmailNullError = "Priére d'ajouter votre adresse email";
+const String kInvalidEmailError = "Priére d'ajouter une adresse email valide";
+const String kPassNullError = "Priére d'ajouter votre mot de passe";
+const String kShortPassError = "Votre mot de passe est trés court";
+const String kMatchPassError = "Les mots de passe ne correspondent pas";
+const String kNamelNullError = "Priére d'ajouter votre nom";
+const String kPhoneNumberNullError = "Priére d'ajouter votre numéro de Téléphone";
+const String kAddressNullError = "Priére d'ajouter votre adresse";
