@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(text: "Aller à l'accueil", press: (){
-            Navigator.pushReplacementNamed(context,HomeScreen.routeName);
+            Navigator.of(context).pushNamedAndRemoveUntil(HomeScreen.routeName,(Route<dynamic> route) => false);
           }),
         ),
         Spacer()
