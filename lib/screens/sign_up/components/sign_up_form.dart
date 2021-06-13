@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/components/custom_suffix_icon.dart';
 import 'package:foodimap_flutter/components/default_button.dart';
 import 'package:foodimap_flutter/components/form_error.dart';
+import 'package:foodimap_flutter/screens/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -54,6 +55,7 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(text: "Continuer", press: (){
             if(_formKey.currentState.validate()){
               // Redirection vers complete Profile page
+              Navigator.pushNamed(context, CompleteProfileScreen.routeName);
             }
           }),
 
