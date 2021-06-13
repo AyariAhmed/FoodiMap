@@ -3,7 +3,7 @@ import 'package:foodimap_flutter/components/custom_suffix_icon.dart';
 import 'package:foodimap_flutter/components/default_button.dart';
 import 'package:foodimap_flutter/components/form_error.dart';
 import 'package:foodimap_flutter/constants.dart';
-import 'package:foodimap_flutter/screens/sign_in/components/sign_form.dart';
+import 'package:foodimap_flutter/screens/sign_in/components/sign_in_form.dart';
 import 'package:foodimap_flutter/screens/sign_up/sign_up_screen.dart';
 import 'package:foodimap_flutter/size_config.dart';
 
