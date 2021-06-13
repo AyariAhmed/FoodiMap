@@ -25,6 +25,8 @@ final headingStyle = TextStyle(
 final RegExp emailValidatorRegExp =
 RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 final RegExp phoneValidatorRegExp = RegExp(r"^\d{8}$");
+final RegExp dateValidatorRegExp = RegExp(r"^(19|20)\d\d(-)(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$");
+const String kDateFormatError = "Priére d'entrer une date avec la format yyyy-mm-dd (exemple 1999-05-17)";
 const String kEmailNullError = "Priére d'ajouter votre adresse email";
 const String kInvalidEmailError = "Priére d'ajouter une adresse email valide";
 const String kPassNullError = "Priére d'ajouter votre mot de passe";
