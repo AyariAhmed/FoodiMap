@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/components/default_button.dart';
+import 'package:foodimap_flutter/screens/home/home_screen.dart';
 import 'package:foodimap_flutter/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -31,8 +32,8 @@ class Body extends StatelessWidget {
         Spacer(),
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
-          child: DefaultButton(text: "Retour à l'accueil", press: (){
-            
+          child: DefaultButton(text: "Aller à l'accueil", press: (){
+            Navigator.pushReplacementNamed(context,HomeScreen.routeName);
           }),
         ),
         Spacer()
