@@ -181,7 +181,7 @@ class _SignUpFormState extends State<SignUpForm> {
             errors.remove(kConfirmPassNullError);
           });
         }
-        if(password == confirm_password && errors.contains(kMatchPassError)){
+        if(password == value && errors.contains(kMatchPassError)){
           setState(() {
             errors.remove(kMatchPassError);
           });
@@ -194,7 +194,7 @@ class _SignUpFormState extends State<SignUpForm> {
             errors.add(kConfirmPassNullError);
           });
           return "";
-        }if(password != confirm_password && !errors.contains(kMatchPassError)){
+        }if(password != value && !errors.contains(kMatchPassError)){
           setState(() {
             errors.add(kMatchPassError);
           });
