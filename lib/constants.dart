@@ -24,9 +24,13 @@ final headingStyle = TextStyle(
 // Form Error
 final RegExp emailValidatorRegExp =
 RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+final RegExp phoneValidatorRegExp = RegExp(r"^\d{8}$");
 const String kEmailNullError = "Priére d'ajouter votre adresse email";
 const String kInvalidEmailError = "Priére d'ajouter une adresse email valide";
 const String kPassNullError = "Priére d'ajouter votre mot de passe";
+const String kConfirmPassNullError = "Priére de confirmer votre mot de passe";
+const String kPhoneNullError = "Priére d'ajouter votre numéro de téléphone";
+const String kInvalidPhoneError = "Priére d'ajouter un numéro de téléphone valide";
 const String kShortPassError = "Votre mot de passe est trés court";
 const String kMatchPassError = "Les mots de passe ne correspondent pas";
 const String kNamelNullError = "Priére d'ajouter votre nom";
