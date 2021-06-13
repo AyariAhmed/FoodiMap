@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodimap_flutter/components/custom_suffix_icon.dart';
 import 'package:foodimap_flutter/components/default_button.dart';
 import 'package:foodimap_flutter/components/form_error.dart';
+import 'package:foodimap_flutter/screens/login_success/login_success_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -35,15 +36,16 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(25),
           ),
-
           Row(
             children: [
-              Checkbox(value: remember,activeColor: kPrimaryColor, onChanged: (value){
-                setState(() {
-                  remember = value;
-                });
-
-              }),
+              Checkbox(
+                  value: remember,
+                  activeColor: kPrimaryColor,
+                  onChanged: (value) {
+                    setState(() {
+                      remember = value;
+                    });
+                  }),
               Text("Se souvenir de moi")
             ],
           ),
@@ -56,6 +58,7 @@ class _SignFormState extends State<SignForm> {
               press: () {
                 if (_formKey.currentState.validate()) {
                   _formKey.currentState.save();
+                  Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               }),
         ],
@@ -64,22 +67,23 @@ class _SignFormState extends State<SignForm> {
   }
 
   TextFormField buildEmailFormField() {
-    const emailTelValidation = "Prière d'ajouter votre Email ou Numéro de Téléphone";
+    const emailTelValidation =
+        "Prière d'ajouter votre Email ou Numéro de Téléphone";
     return TextFormField(
-      onSaved: (newValue) => email_phone= newValue,
-      onChanged: (value){
-        if(value.isNotEmpty && errors.contains(emailTelValidation)){
+      onSaved: (newValue) => email_phone = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty && errors.contains(emailTelValidation)) {
           setState(() {
             errors.remove(emailTelValidation);
           });
         }
       },
       validator: (value) {
-        if (value.isEmpty &&
-            !errors.contains(emailTelValidation)) {
+        if (value.isEmpty && !errors.contains(emailTelValidation)) {
           setState(() {
             errors.add(emailTelValidation);
           });
+          return "";
         }
         return null;
       },
@@ -95,27 +99,28 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       obscureText: true,
       onSaved: (newValue) => password = newValue,
-      onChanged: (value){
-        if(value.isNotEmpty && errors.contains(kPassNullError)){
+      onChanged: (value) {
+        if (value.isNotEmpty && errors.contains(kPassNullError)) {
           setState(() {
             errors.remove(kPassNullError);
           });
-        }else if (value.length>= 6 && errors.contains(kShortPassError)){
+        } else if (value.length >= 6 && errors.contains(kShortPassError)) {
           setState(() {
             errors.remove(kShortPassError);
           });
         }
       },
       validator: (value) {
-        if (value.isEmpty &&
-            !errors.contains(kPassNullError)) {
+        if (value.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
             errors.add(kPassNullError);
           });
-        }else if (value.length <6 && !errors.contains(kShortPassError)){
+          return "";
+        } else if (value.length < 6 && !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return "";
         }
         return null;
       },
